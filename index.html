@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <title>Weather Dashboard</title>
+</head>
+<body>
+  <header class="bg-dark">
+    <h1 class="text-center text-white">Weather Dashboard</h1>
+  </header>
+  <main class="container">
+    <div class="row">
+      <div class="col-4 bg-light">
+        <h2>Search for a city</h2>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control">
+          <div class="input-group-append">
+            <button class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <button class="btn btn-primary mb-3">
+          Clear History
+        </button>
+        <ul class="history-lst"></ul>
+
+      </div>
+      
+      <div class="row col-8">
+       
+        <div class="row col-12 border border-dark rounded m-4">
+          <div class="row col-12">
+            Orlando
+          </div>
+          <div class="row col-12">
+            Temperature:
+          </div>
+          <div class="row col-12">
+            Humidity:
+          </div>
+          <div class="row col-12">
+            Wind speed:
+          </div>
+          <div class="row col-12">
+            UV Index:
+          </div>
+        </div>
+
+        <div class="row col-12 border border-dark rounded m-4">
+          <div class="row col-12">
+            <h2>Five-Day Forecast</h2>
+          </div>
+
+          <div class="row col-12">
+            <div class="col rounded forecast" id="forecast1"></div>
+            <div class="col rounded forecast" id="forecast1"></div>
+            <div class="col rounded forecast" id="forecast1"></div>
+            <div class="col rounded forecast" id="forecast1"></div>
+            <div class="col rounded forecast" id="forecast1"></div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+    
+
+  </main>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
