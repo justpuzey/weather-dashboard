@@ -17,14 +17,18 @@
     <div class="row">
       <div class="col-4 bg-light">
         <h2>Search for a city</h2>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control">
-          <div class="input-group-append">
-            <button class="btn btn-primary">
-              <i class="fas fa-search"></i>
-            </button>
+        
+        <form id="user-form">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="city-input">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
+        
         <button class="btn btn-primary mb-3">
           Clear History
         </button>
@@ -35,34 +39,24 @@
       <div class="row col-8">
        
         <div class="row col-12 border border-dark rounded m-4">
-          <div class="row col-12">
-            Orlando
-          </div>
-          <div class="row col-12">
-            Temperature:
-          </div>
-          <div class="row col-12">
-            Humidity:
-          </div>
-          <div class="row col-12">
-            Wind speed:
-          </div>
-          <div class="row col-12">
-            UV Index:
-          </div>
+          <div class="row col-12" id="city-heading"></div>
+          <div class="row col-12 my-1" id="temperature"></div>
+          <div class="row col-12 my-1" id="humidity"></div>
+          <div class="row col-12 my-1" id="wind-speed"></div>
+          <div class="row col-12 my-1" id="uv-index"></div>
         </div>
 
-        <div class="row col-12 border border-dark rounded m-4">
+        <div class="row ml-4">
           <div class="row col-12">
             <h2>Five-Day Forecast</h2>
           </div>
 
           <div class="row col-12">
-            <div class="col rounded forecast" id="forecast1"></div>
-            <div class="col rounded forecast" id="forecast1"></div>
-            <div class="col rounded forecast" id="forecast1"></div>
-            <div class="col rounded forecast" id="forecast1"></div>
-            <div class="col rounded forecast" id="forecast1"></div>
+            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
           </div>
 
         </div>
