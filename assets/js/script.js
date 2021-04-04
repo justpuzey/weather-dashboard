@@ -6,11 +6,6 @@ var windSpeedEl = document.querySelector("#wind-speed")
 var uvIndexEl = document.querySelector("#uv-index")
 var clrHistEl = document.querySelector("#clear-history")
 
-//Today's date
-var today = new Date();
-console.log('today: ', today)
-
-
 //----------------------------------------------------------
 //Capture user input
 var userFormEl = document.querySelector("#user-form")
@@ -21,10 +16,6 @@ var formSubmitHandler = function (event) {
   event.preventDefault();
 
   if (userCity) {
-    console.log("selected City: " + userCity);
-    //Save Search to Local Storage
-    // localStorage.setItem("search", userCity);
-
     var citySearched = {
       search: userCity
     }
@@ -50,7 +41,7 @@ var renderWeather = function (city) {
 
 
   //Render current Day-------------------------------
-  var todayFormatted = today.getMonth() + '/' + today.getDay() + '/' + today.getFullYear()
+  var todayFormatted = moment().format('MM/DD/YY')
   let todayURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=imperial';
   fetch(todayURL)
     .then(function (response) {
@@ -96,8 +87,7 @@ var renderWeather = function (city) {
           allForecastEl[i].innerHTML = " "
           var forecastIndex = i * 8 + 4
           //date
-          // var incDate = today.getDate() + i + 1
-          var dateStr = today.getMonth() + '/' + (today.getDay() + i + 1) + '/' + today.getFullYear()
+          var dateStr = moment().add(1 + i, 'day').format('MM/DD/YY')
           var dateEl = document.createElement("p")
           dateEl.innerHTML = dateStr
           allForecastEl[i].append(dateEl)
@@ -144,3 +134,13 @@ clrHistEl.addEventListener("click", function () {
 
 //Event listener for selecting city
 userFormEl.addEventListener("submit", formSubmitHandler);
+
+// due date was clicked
+$(".history-list").on("click", "li", function () {
+  // get current text
+  var searchValue = $(this)
+    .text()
+    .trim();
+  renderWeather(searchValue)
+});
+
