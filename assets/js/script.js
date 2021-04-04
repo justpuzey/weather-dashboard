@@ -5,6 +5,10 @@ var humidityEl = document.querySelector("#humidity")
 var windSpeedEl = document.querySelector("#wind-speed")
 var uvIndexEl = document.querySelector("#uv-index")
 
+//Today's date
+var today = new Date();
+console.log('today: ', today)
+
 
 //----------------------------------------------------------
 //Capture user input
@@ -17,6 +21,8 @@ var formSubmitHandler = function (event) {
 
   if (userCity) {
     console.log("selected City: " + userCity);
+    //Save Search to Local Storage
+    localStorage.setItem("search", userCity);
     renderWeather(userCity);
   }
 };
@@ -25,7 +31,9 @@ var formSubmitHandler = function (event) {
 //Render Weather
 var renderWeather = function (city) {
 
+
   //Render current Day-------------------------------
+  var todayFormatted = today.getMonth() + '/' + today.getDay() + '/' + today.getFullYear()
   let todayURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=imperial';
   fetch(todayURL)
     .then(function (response) {
@@ -35,7 +43,7 @@ var renderWeather = function (city) {
         var todayCityEl = document.createElement("span");
         cityHeadingEl.innerHTML = " "
         var weatherIcon = 'http://openweathermap.org/img/wn/' + todayData.weather[0].icon + '@2x.png'
-        todayCityEl.innerHTML = todayData.name + '<img src="' + weatherIcon + '">';
+        todayCityEl.innerHTML = todayData.name + " (" + todayFormatted + ') <img src="' + weatherIcon + '">';
         cityHeadingEl.appendChild(todayCityEl)
 
         //Add Temperature
@@ -71,6 +79,11 @@ var renderWeather = function (city) {
           allForecastEl[i].innerHTML = " "
           var forecastIndex = i * 8 + 4
           //date
+          // var incDate = today.getDate() + i + 1
+          var dateStr = today.getMonth() + '/' + (today.getDay() + i + 1) + '/' + today.getFullYear()
+          var dateEl = document.createElement("p")
+          dateEl.innerHTML = dateStr
+          allForecastEl[i].append(dateEl)
           //icon
           var weatherIconEl = document.createElement("img")
           weatherIconEl.setAttribute("src", 'http://openweathermap.org/img/wn/' + fiveDayData.list[forecastIndex].weather[0].icon + '@2x.png');
