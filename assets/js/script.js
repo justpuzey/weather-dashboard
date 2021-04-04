@@ -5,6 +5,7 @@ var humidityEl = document.querySelector("#humidity")
 var windSpeedEl = document.querySelector("#wind-speed")
 var uvIndexEl = document.querySelector("#uv-index")
 var clrHistEl = document.querySelector("#clear-history")
+var listEl = document.querySelector(".history-list")
 
 //----------------------------------------------------------
 //Capture user input
@@ -24,6 +25,7 @@ var formSubmitHandler = function (event) {
       cities = [];
     }
     else {
+      listEl.innerHTML = ""
       cities = JSON.parse(cities);
     }
     cities.push(citySearched);
@@ -111,7 +113,6 @@ var renderWeather = function (city) {
 //----------------------------------------------------------
 //Render Search History
 var renderHistory = function () {
-  var listEl = document.querySelector(".history-list")
   var searchedCities = localStorage.getItem("search");
   searchedCities = JSON.parse(searchedCities);
   console.log('searches', searchedCities)
