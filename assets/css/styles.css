@@ -10,3 +10,17 @@
 #city-heading{
   font-size: 30px;
 }
+Ul {
+  list-style-type: none;
+}
+li {
+  border: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: gray;
+  margin-bottom: 3px;
+  padding: 5px;
+}
+li:hover {
+  background-color: lightgray;
+}

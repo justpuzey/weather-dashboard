@@ -4,6 +4,7 @@ var temperatureEl = document.querySelector("#temperature")
 var humidityEl = document.querySelector("#humidity")
 var windSpeedEl = document.querySelector("#wind-speed")
 var uvIndexEl = document.querySelector("#uv-index")
+var clrHistEl = document.querySelector("#clear-history")
 
 //Today's date
 var today = new Date();
@@ -22,8 +23,24 @@ var formSubmitHandler = function (event) {
   if (userCity) {
     console.log("selected City: " + userCity);
     //Save Search to Local Storage
-    localStorage.setItem("search", userCity);
+    // localStorage.setItem("search", userCity);
+
+    var citySearched = {
+      search: userCity
+    }
+    var cities = localStorage.getItem("search");
+    if (cities === null) {
+      cities = [];
+    }
+    else {
+      cities = JSON.parse(cities);
+    }
+    cities.push(citySearched);
+    cities = JSON.stringify(cities);
+    localStorage.setItem("search", cities);
+
     renderWeather(userCity);
+    renderHistory();
   }
 };
 
@@ -102,6 +119,28 @@ var renderWeather = function (city) {
     })
 }
 
+//----------------------------------------------------------
+//Render Search History
+var renderHistory = function () {
+  var listEl = document.querySelector(".history-list")
+  var searchedCities = localStorage.getItem("search");
+  searchedCities = JSON.parse(searchedCities);
+  console.log('searches', searchedCities)
+
+  if (searchedCities !== null) {
+    for (var i = 0; i < searchedCities.length; i++) {
+      var createLi = document.createElement("li");
+      createLi.textContent = searchedCities[i].search
+      listEl.appendChild(createLi);
+    }
+  }
+}
+
+//Clear Search History
+clrHistEl.addEventListener("click", function () {
+  localStorage.clear();
+  location.reload();
+});
 
 //Event listener for selecting city
 userFormEl.addEventListener("submit", formSubmitHandler);
