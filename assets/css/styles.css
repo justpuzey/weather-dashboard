@@ -4,9 +4,11 @@
 }
 
 :root{
-  --blue: 
+  --blue: #447497
 }
-
+.gradient{
+    background-image: linear-gradient(to right, #D21404 , #FFCD01);
+}
 #city-heading{
   font-size: 30px;
 }
@@ -23,4 +25,8 @@ li {
 }
 li:hover {
   background-color: lightgray;
+}
+
+.blue {
+  background-color: var(--blue);
 }

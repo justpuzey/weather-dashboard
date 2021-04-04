@@ -11,7 +11,7 @@
   <title>Weather Dashboard</title>
 </head>
 <body>
-  <header class="bg-dark">
+  <header class="gradient">
     <h1 class="text-center text-white">Weather Dashboard</h1>
   </header>
   <main class="container">
@@ -23,17 +23,17 @@
           <div class="input-group mb-3">
             <input type="text" class="form-control" id="city-input">
             <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn blue text-white">
                 <i class="fas fa-search"></i>
               </button>
             </div>
           </div>
         </form>
         
-        <button class="btn btn-primary mb-3" id="clear-history">
+        <ul class="history-list"></ul>
+        <button class="btn blue text-white mb-3" id="clear-history">
           Clear History
         </button>
-        <ul class="history-list"></ul>
 
       </div>
       
@@ -53,11 +53,11 @@
           </div>
 
           <div class="row col-12">
-            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
-            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
-            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
-            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
-            <div class="col bg-primary text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col blue text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col blue text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col blue text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col blue text-white rounded forecast mr-2" id="forecast"></div>
+            <div class="col blue text-white rounded forecast mr-2" id="forecast"></div>
           </div>
 
         </div>

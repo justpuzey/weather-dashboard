@@ -39,7 +39,6 @@ var formSubmitHandler = function (event) {
 //Render Weather
 var renderWeather = function (city) {
 
-
   //Render current Day-------------------------------
   var todayFormatted = moment().format('MM/DD/YY')
   let todayURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=imperial';
