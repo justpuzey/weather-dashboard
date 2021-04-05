@@ -98,7 +98,7 @@ var renderWeather = function (city) {
           allForecastEl[i].append(weatherIconEl)
           //wind
           var windEl = document.createElement("p")
-          windEl.innerHTML = 'Wind: ' + (fiveDayData.list[forecastIndex].wind.speed) + 'MPH';
+          windEl.innerHTML = 'Wind: ' + Math.round(fiveDayData.list[forecastIndex].wind.speed) + 'MPH';
           allForecastEl[i].append(windEl)
           //temp
           var tempEl = document.createElement("p")
@@ -106,7 +106,7 @@ var renderWeather = function (city) {
           allForecastEl[i].append(tempEl)
           //humidity
           var humidEl = document.createElement("p")
-          humidEl.innerHTML = 'Humidity: ' + Math.round(fiveDayData.list[forecastIndex].main.humidity) + '%';
+          humidEl.innerHTML = 'Humid: ' + Math.round(fiveDayData.list[forecastIndex].main.humidity) + '%';
           allForecastEl[i].append(humidEl)
         }
         console.log('fiveday', fiveDayData)
