@@ -96,6 +96,10 @@ var renderWeather = function (city) {
           var weatherIconEl = document.createElement("img")
           weatherIconEl.setAttribute("src", 'http://openweathermap.org/img/wn/' + fiveDayData.list[forecastIndex].weather[0].icon + '@2x.png');
           allForecastEl[i].append(weatherIconEl)
+          //wind
+          var windEl = document.createElement("p")
+          windEl.innerHTML = 'Wind: ' + (fiveDayData.list[forecastIndex].wind.speed) + 'MPH';
+          allForecastEl[i].append(windEl)
           //temp
           var tempEl = document.createElement("p")
           tempEl.innerHTML = 'Temp: ' + Math.round(fiveDayData.list[forecastIndex].main.temp) + '&#8457;';

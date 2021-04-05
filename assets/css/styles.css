@@ -25,7 +25,9 @@ li {
 li:hover {
   background-color: lightgray;
 }
-
 .blue {
   background-color: var(--blue);
+}
+.forecast {
+  width: 400px;
 }
