@@ -117,7 +117,7 @@ var renderWeather = function (city) {
           allForecastEl[i].append(dateEl)
           //icon
           var weatherIconEl = document.createElement("img")
-          weatherIconEl.setAttribute("src", 'http://openweathermap.org/img/wn/' + fiveDayData.list[forecastIndex].weather[0].icon + '@2x.png');
+          weatherIconEl.setAttribute("src", 'https://openweathermap.org/img/wn/' + fiveDayData.list[forecastIndex].weather[0].icon + '@2x.png');
           allForecastEl[i].append(weatherIconEl)
           //wind
           var windEl = document.createElement("p")
