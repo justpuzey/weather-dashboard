@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --blue: #007bff;
+}
+
+button {
+  color: white;
+  background-color: var(--blue);
+  border-width: 0px;
+  padding: 10px;
+  margin-bottom: 15px;
+  
+}
+
+button.search-btn {
+  border-radius: 0px 10px 10px 0px ;
+  border-width: 0px;
+}
+
+button.history-btn {
+  
+}

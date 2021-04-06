@@ -73,6 +73,32 @@ var renderWeather = function (city) {
         todayWindEl.innerHTML = 'Wind Speed: ' + todayData.wind.speed + ' MPH';
         windSpeedEl.appendChild(todayWindEl)
 
+        var lat = todayData.coord.lat
+        var longitude = todayData.coord.lon
+        var uvIndexURL = 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + longitude + '&appid=' + apiKey
+
+        //UV Index
+        fetch(uvIndexURL)
+          .then(function (response) {
+            response.json().then(function (uvData) {
+              var severity = ""
+              if (uvData.value <= 2) {
+                severity = 'favorable'
+              } else if (uvData.value <= 7) {
+                severity = 'moderate'
+              } else {
+                severity = 'severe'
+              }
+              var todayUvi = document.createElement("span");
+              uvIndexEl.innerHTML = " "
+              todayUvi.innerHTML = 'UV Index: <span class =' + severity + '>' + uvData.value + '</span>';
+              uvIndexEl.appendChild(todayUvi)
+
+              console.log('uv', uvData)
+            })
+          })
+
+
         console.log(todayData)
       })
     })

@@ -31,3 +31,29 @@ li:hover {
 .forecast {
   width: 400px;
 }
+.severe {
+  background-color: red;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 3px;
+}
+.moderate{
+  background-color: yellow;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 3px;
+}
+.favorable {
+  background-color: green;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 3px;
+}
