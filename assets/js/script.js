@@ -75,7 +75,7 @@ var renderWeather = function (city) {
 
         var lat = todayData.coord.lat
         var longitude = todayData.coord.lon
-        var uvIndexURL = 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + longitude + '&appid=' + apiKey
+        var uvIndexURL = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + longitude + '&appid=' + apiKey
 
         //UV Index
         fetch(uvIndexURL)
