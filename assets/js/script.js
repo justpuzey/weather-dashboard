@@ -93,13 +93,10 @@ var renderWeather = function (city) {
               uvIndexEl.innerHTML = " "
               todayUvi.innerHTML = 'UV Index: <span class =' + severity + '>' + uvData.value + '</span>';
               uvIndexEl.appendChild(todayUvi)
-
               console.log('uv', uvData)
             })
           })
-
-
-        console.log(todayData)
+        console.log('todays data:', todayData)
       })
     })
 
