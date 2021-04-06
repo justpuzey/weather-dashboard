@@ -51,7 +51,7 @@ var renderWeather = function (city) {
         //Add City Name
         var todayCityEl = document.createElement("span");
         cityHeadingEl.innerHTML = " "
-        var weatherIcon = 'http://openweathermap.org/img/wn/' + todayData.weather[0].icon + '@2x.png'
+        var weatherIcon = 'https://openweathermap.org/img/wn/' + todayData.weather[0].icon + '@2x.png'
         todayCityEl.innerHTML = todayData.name + " (" + todayFormatted + ') <img src="' + weatherIcon + '">';
         cityHeadingEl.appendChild(todayCityEl)
 
